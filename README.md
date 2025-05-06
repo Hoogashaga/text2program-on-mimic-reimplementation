@@ -2,10 +2,6 @@
 
 This repository is the reproduction of the [Uncertainty-Aware Text-to-Program for Question Answering on Structured Electronic Health Records](https://arxiv.org/abs/2203.06918) (CHIL 2022).
 
-<p align="center">
-  <img src="https://github.com/username/text2program-for-ehr/raw/main/assets/model_overview.png" alt="Model Overview" width="600"/>
-</p>
-
 ## Abstract
 
 This project reproduces the uncertainty-aware text-to-program model presented in the original paper for answering natural language questions on structured electronic health records (EHRs). The reproduction leverages a T5-based architecture to generate executable queries from natural language questions, capturing both data and model uncertainty to address ambiguity in healthcare queries, as described in the original research.
