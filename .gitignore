@@ -1,0 +1,12 @@
+
+# Large files to ignore
+*.ckpt
+*.pt
+*.pkl
+*.npy
+*.npz
+*.tar
+*.db
+*.h5
+*.zip
+
