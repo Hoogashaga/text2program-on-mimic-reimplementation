@@ -47,9 +47,9 @@ The main dependencies are:
    
    # Then, build MIMIC-SPARQL knowledge graph from MIMICSQL* database
    python build_mimicsparql_kg/build_complex_kg_from_mimicsqlstar_db.py
-
-   ref: https://github.com/junwoopark92/mimic-sparql)
    ```
+   ref: https://github.com/junwoopark92/mimic-sparql)
+
 4. The KG file (`mimic_sparqlstar_kg.xml`) should be placed in the `./data/db/mimicstar_kg` directory.
 
 ### Pre-processing
