@@ -34,16 +34,21 @@ The main dependencies are:
 1. Access MIMIC-III data (requires certification from [PhysioNet](https://mimic.physionet.org/))
 2. Generate the MIMIC-III database:
    ```bash
-   cd MIMIC_SPARQL_KG_generator
+   cd mimic_db_generator
    python process_mimic_db.py
    ```
+   ref: https://github.com/wangpinggl/TREQS 
+
 3. Build the knowledge graph for MIMICSPARQL* following these steps:
    ```bash
+   cd MIMIC_SPARQL_KG_generator
    # First, build MIMICSQL* database from MIMICSQL database
    python build_mimicsparql_kg/build_mimicsqlstar_db_from_mimicsql_db.py
    
    # Then, build MIMIC-SPARQL knowledge graph from MIMICSQL* database
    python build_mimicsparql_kg/build_complex_kg_from_mimicsqlstar_db.py
+
+   ref: https://github.com/junwoopark92/mimic-sparql)
    ```
 4. The KG file (`mimic_sparqlstar_kg.xml`) should be placed in the `./data/db/mimicstar_kg` directory.
 
@@ -68,9 +73,6 @@ python main.py --model T5 \
                --train_batch_size 16 \
                --learning_rate 5e-5 \
                --resume_from_checkpoint "path to *.ckpt"\
-               --ensemble_test \
-               --ensemble_seed "42,1,12,123,1234" \
-               --gpu_id "0"
 ```
 
 ## Evaluation
@@ -83,7 +85,11 @@ python main.py --test
 
 For ensemble model evaluation:
 ```bash
-python model/ensemble_test.py --model_args.ensemble_seed <seed1,seed2,seed3>
+python main.py --model T5\
+                --eval_batch_size 16\
+               --ensemble_test \
+               --ensemble_seed "42,1,12,123,1234" \
+               --gpu_id "0"
 ```
 
 ## Pretrained Models
